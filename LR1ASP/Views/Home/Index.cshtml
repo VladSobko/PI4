@@ -1,0 +1,42 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    <title>Оцінки студентів</title>
+</head>
+<body>
+    <div>
+        <h3>Журнал:</h3>        
+        <table>
+            <tr>
+                <td><p>Номер по списку</p></td>
+                <td><p>Імя</p></td>
+                <td><p>Прізвище</p></td>
+                <td><p>Група</p></td>
+                <td><p>Курс</p></td>
+                <td><p>Англійська мова</p></td>
+                <td><p>Математика</p></td>
+                <td><p>Програмування в інтернет</p></td>
+            </tr>
+            @foreach (var s in ViewBag.Students)
+            {
+        <tr>
+            <td><p>@s.Id</p></td>
+            <td><p>@s.Name</p></td>
+            <td><p>@s.Surname</p></td>
+            <td><p>@s.Group</p></td>
+            <td><p>@s.Course</p></td>
+            <td><p>@s.English</p></td>
+            <td><p>@s.Math</p></td>
+            <td><p>@s.WebProgramming</p></td>
+            <td>
+                <p><a href="/Home/ChangeMark/@s.Id">Виставити оцінки</a></p>
+            </td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

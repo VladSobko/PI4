@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ChangeMark";
+}
+@{ Layout = null; }
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width" />
+<link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+<title>Виставлення оцінок</title>
+
+<center>
+    <h3>
+        <span style="color: #ff3300">
+            Будь ласка , введіть предмет та оціну !
+        </span>
+    </h3>
+    <form name="MainForm">
+        <p>
+            <span style="color: #00660">
+                <strong>
+                    Предмет:
+                </strong>
+            </span>
+            <input name="Subject" type="text" />
+        </p>
+        <p>
+            <span style="color: #006600">
+                <strong>
+                    Оцінка:
+                </strong>
+            </span>
+            <input name="Mark" type="text" />
+        </p>
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="Підтвердження"
+               onclick="return btnSubmit_onclick()" />
+
+        <script language="javascript" type="text/javascript">
+            function btnSubmit_onclick() {
+                if ((MainForm.Subject.value == "") ||
+                    (MainForm.Mark.value == "")) {
+                    alert("Ви повинні ввести предмет та оцінку!");
+                    return false;
+                }
+                else alert("Оцінку успішно виставлено!");
+                return true;
+            }
+        </script>
+    </form>
+</center>
+
