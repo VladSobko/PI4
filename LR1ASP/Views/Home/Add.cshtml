@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+@{ Layout = null; }
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width" />
+<link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+<title>Додати дані</title>
+
+    <center>
+        <form method="post" action="/Home/Add">
+            <input type="hidden" value="@ViewBag.Id" name="Id" />
+            <table>
+                <tr>
+                    <td><p>Введіть імя</p></td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть прізвище</p></td>
+                    <td><input type="text" name="Surname" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть групу</p></td>
+                    <td><input type="text" name="Group" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть курс</p></td>
+                    <td><input type="number" name="Course" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть  оцінку з англійської</p></td>
+                    <td><input type="number" name="English" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть  оцінку з математики</p></td>
+                    <td><input type="number" name="Math" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть оцінку з веб-програмування</p></td>
+                    <td><input type="number" name="WebProgramming" /> </td>
+                </tr>
+                <tr>
+            </table>
+            <input type="submit" value="Додати" />
+        </form>
+
+    </center>
+

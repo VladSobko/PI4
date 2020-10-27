@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+@{ Layout = null; }
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width" />
+<link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+<title>Редагування оцінок</title>
+
+
+<!DOCTYPE html>
+
+<meta name="viewport" content="width=device-width" />
+<title>Додати дані</title>
+
+    <center>
+        <form method="post" action="/Home/Edit/@ViewBag.Student.Id">
+            <input type="hidden" value="@ViewBag.Student.Id" name="Id" />
+            <table>
+                <tr>
+                    <td><p>Введіть імя</p></td>
+                    <td><input type="text" name="Name" value="@ViewBag.Student.Name" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть прізвище</p></td>
+                    <td><input type="text" name="Surname" value="@ViewBag.Student.Surname"/> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть групу</p></td>
+                    <td><input type="text" name="Group" value="@ViewBag.Student.Group" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть курс</p></td>
+                    <td><input type="number" name="Course" value="@ViewBag.Student.Course"/> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть  оцінку з англійської</p></td>
+                    <td><input type="number" name="English" value="@ViewBag.Student.English"/> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть  оцінку з математики</p></td>
+                    <td><input type="number" name="Math" value="@ViewBag.Student.Math"/> </td>
+                </tr>
+                <tr>
+                    <td><p>Введіть оцінку з веб-програмування</p></td>
+                    <td><input type="number" name="WebProgramming" value="@ViewBag.Student.WebProgramming"/> </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td><input type="submit" value="Редагувати" /> </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+
+    </center>
+
