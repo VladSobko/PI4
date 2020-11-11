@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace LR1ASP.Controllers
 {
@@ -18,8 +19,24 @@ namespace LR1ASP.Controllers
         [HttpGet]
         public ActionResult ChangeMark(int id)
         {
-            ViewBag.StudentId = id;
+            ViewBag.Id = id;
             return View();
+        }
+        [HttpPost]
+        public ActionResult MainForm(Mark mark)
+        {
+            db.Marks.Add(mark);
+            db.SaveChanges();
+            
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Marks()
+        {
+
+            var marks = db.Marks.Include(p => p.Student);
+            return View(marks.ToList());
+     
         }
         [HttpGet]
         public ActionResult Add()
@@ -61,9 +78,7 @@ namespace LR1ASP.Controllers
             old_student.Surname = student.Surname;
             old_student.Group = student.Group;
             old_student.Course = student.Course;
-            old_student.English = student.English;
-            old_student.Math = student.Math;
-            old_student.WebProgramming = student.WebProgramming;
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }

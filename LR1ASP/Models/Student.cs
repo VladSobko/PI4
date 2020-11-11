@@ -12,8 +12,11 @@ namespace LR1ASP.Models
         public string Surname { get; set; }
         public string Group { get; set; }
         public int Course { get; set; }
-        public int English { get; set; }
-        public int Math { get; set; }
-        public int WebProgramming { get; set; }
+        public ICollection<Mark> Marks { get; set; }
+        public Student()
+        {
+            Marks = new List<Mark>();
+        }
+
     }
 }

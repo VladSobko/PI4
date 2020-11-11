@@ -15,7 +15,8 @@
             Будь ласка , введіть предмет та оціну !
         </span>
     </h3>
-    <form name="MainForm">
+    <form  method="post" action="/Home/MainForm">
+        <input type="hidden" value="@ViewBag.Id" name="StudentId" />
         <p>
             <span style="color: #00660">
                 <strong>
@@ -30,7 +31,7 @@
                     Оцінка:
                 </strong>
             </span>
-            <input name="Mark" type="text" />
+            <input name="MarkValue" type="number" />
         </p>
         <input id="btnSubmit" name="btnSubmit" type="submit" value="Підтвердження"
                onclick="return btnSubmit_onclick()" />

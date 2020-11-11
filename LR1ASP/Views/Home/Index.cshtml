@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <h3>Журнал:</h3>
+        <h3>Студенти:</h3>
         <table>
             <tr>
                 <td><p>Номер по списку</p></td>
@@ -16,34 +16,31 @@
                 <td><p>Прізвище</p></td>
                 <td><p>Група</p></td>
                 <td><p>Курс</p></td>
-                <td><p>Англійська мова</p></td>
-                <td><p>Математика</p></td>
-                <td><p>Програмування в інтернет</p></td>
             </tr>
             @foreach (var s in ViewBag.Students)
             {
-        <tr>
-            <td><p>@s.Id</p></td>
-            <td><p>@s.Name</p></td>
-            <td><p>@s.Surname</p></td>
-            <td><p>@s.Group</p></td>
-            <td><p>@s.Course</p></td>
-            <td><p>@s.English</p></td>
-            <td><p>@s.Math</p></td>
-            <td><p>@s.WebProgramming</p></td>
-            <td>
-                <p><a href="/Home/ChangeMark/@s.Id">Виставити оцінки</a></p>
-            </td>
-            <td>
-                <p><a href="/Home/Edit/@s.Id">Редагувати</a></p>
-            </td>
-            <td>
-                <p><a href="/Home/Delete/@s.Id">Видалити</a></p>
-            </td>
-        </tr>
+                <tr>
+                    <td><p>@s.Id</p></td>
+                    <td><p>@s.Name</p></td>
+                    <td><p>@s.Surname</p></td>
+                    <td><p>@s.Group</p></td>
+                    <td><p>@s.Course</p></td>
+
+                    <td>
+                        <p><a href="/Home/ChangeMark/@s.Id">Виставити оцінки</a></p>
+                    </td>
+                    @*<td>
+                        <p><a href="/Home/Edit/@s.Id">Редагувати</a></p>
+                    </td>*@
+                    <td>
+                        <p><a href="/Home/Delete/@s.Id">Видалити</a></p>
+                    </td>
+                   
+                </tr>
             }
         </table>
-        <p><a href="/Home/Add/">Додати дані</a></p>
+        <p><a href="/Home/Add/">Додати студента</a></p>
+        <p><a href="/Home/Marks/">Результати сесії</a></p>
     </div>
 </body>
 </html>

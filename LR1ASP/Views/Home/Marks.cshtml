@@ -1,0 +1,42 @@
+﻿
+@{ Layout = null; }
+
+@model IEnumerable<LR1ASP.Models.Mark>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    <title>Оцінки студентів</title>
+</head>
+<body>
+    <div>
+        <h3>Журнал:</h3>
+        <table>
+            <tr>
+                <td><p>Прізвище</p></td>
+                <td><p>Група</p></td>
+                <td><p>Предмет</p></td>
+                <td><p>Оцінка</p></td>
+            </tr>
+
+            @foreach (var m in Model)
+            {
+                    <tr>
+                        <td><p>@m.Student.Surname</p></td>
+                        <td><p>@m.Student.Group</p></td>
+                        <td><p>@m.Subject</p></td>
+                        <td><p>@m.MarkValue</p></td>
+                    </tr>
+                    }
+
+            </table>
+        <p><a href="/">Перейти до списку студентів</a></p>
+    </div>
+</body>
+</html>
+
+
+
